@@ -48,7 +48,10 @@ internal object FileUtils {
         val mimeType = MimeTypeMap.getSingleton().getMimeTypeFromExtension(extension)
         var source = getBytesFromFile(file)
 
-        var directory = Environment.DIRECTORY_PICTURES
+        /**
+         *  添加koi路径
+         */
+        var directory = Environment.DIRECTORY_PICTURES + "/koi"
         if (toDcim) {
             directory = Environment.DIRECTORY_DCIM
         }
