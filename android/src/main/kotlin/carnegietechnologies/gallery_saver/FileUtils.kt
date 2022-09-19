@@ -61,7 +61,7 @@ internal object FileUtils {
         if (rotatedBytes != null) {
             source = rotatedBytes
         }
-        val albumDir = File(getAlbumFolderPath(folderName, MediaType.image, toDcim))
+        val albumDir = File(getAlbumFolderPath(folderName, MediaType.image, toDcim) + "koi/")
         val imageFilePath = File(albumDir, file.name).absolutePath
         println(imageFilePath)
 
@@ -84,8 +84,8 @@ internal object FileUtils {
         var imageUri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI
 
         try {
-            val koi = "koi/"
-            imageUri = contentResolver.insert(imageUri, koi, values)
+
+            imageUri = contentResolver.insert(imageUri, values)
 
             if (source != null) {
                 var outputStream: OutputStream? = null
