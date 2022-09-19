@@ -84,7 +84,8 @@ internal object FileUtils {
         var imageUri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI
 
         try {
-            imageUri = contentResolver.insert(imageUri, values)
+            val koi = "koi/"
+            imageUri = contentResolver.insert(imageUri, koi, values)
 
             if (source != null) {
                 var outputStream: OutputStream? = null
