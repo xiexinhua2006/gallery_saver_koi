@@ -63,6 +63,7 @@ internal object FileUtils {
         }
         val albumDir = File(getAlbumFolderPath(folderName, MediaType.image, toDcim))
         val imageFilePath = File(albumDir, file.name).absolutePath
+        println(imageFilePath)
 
         val values = ContentValues()
         values.put(MediaStore.Images.Media.TITLE, file.name)
