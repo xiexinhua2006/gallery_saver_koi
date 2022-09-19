@@ -42,7 +42,11 @@ class GallerySaver internal constructor(private val activity: Activity) :
         toDcim = methodCall.argument<Any>(KEY_TO_DCIM) as Boolean
         this.mediaType = mediaType
         this.pendingResult = result
+        println('...')
         println(filePath)
+        println(albumName)
+        println(toDcim)
+
 
         if (isWritePermissionGranted() || android.os.Build.VERSION.SDK_INT >= 29) {
             saveMediaFile()
