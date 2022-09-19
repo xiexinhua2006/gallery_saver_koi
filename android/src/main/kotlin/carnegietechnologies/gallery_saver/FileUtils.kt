@@ -61,7 +61,10 @@ internal object FileUtils {
         if (rotatedBytes != null) {
             source = rotatedBytes
         }
-        val albumDir = File(getAlbumFolderPath(folderName, MediaType.image, toDcim) + "koi/")
+        /**
+         *  Android SDK < 29 添加koi路径
+         */
+        val albumDir = File(getAlbumFolderPath(folderName, MediaType.image, toDcim) + "/koi/")
         val imageFilePath = File(albumDir, file.name).absolutePath
         println(imageFilePath)
 
