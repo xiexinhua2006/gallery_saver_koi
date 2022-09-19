@@ -20,6 +20,7 @@ class GallerySaver internal constructor(private val activity: Activity) :
     private var mediaType: MediaType? = null
     private var filePath: String = ""
     private var albumName: String = ""
+    private var test_self: String = "test_self"
     private var toDcim: Boolean = false
 
     private val job = Job()
@@ -42,7 +43,7 @@ class GallerySaver internal constructor(private val activity: Activity) :
         toDcim = methodCall.argument<Any>(KEY_TO_DCIM) as Boolean
         this.mediaType = mediaType
         this.pendingResult = result
-        println('...')
+        println(test_self)
         println(filePath)
         println(albumName)
         println(toDcim)
