@@ -66,6 +66,13 @@ internal object FileUtils {
          */
         val albumDir = File(getAlbumFolderPath(folderName, MediaType.image, toDcim) + "/koi/")
         val imageFilePath = File(albumDir, file.name).absolutePath
+        /**
+         * Android SDK < 29 如果没有koi文件夹自动创建 修复 20221004
+         */
+        if (!imageFilePath.exists()) {
+            imageFilePath.mkdir()
+        }
+
         println(imageFilePath)
 
         val values = ContentValues()
