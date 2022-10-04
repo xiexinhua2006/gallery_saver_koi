@@ -69,8 +69,8 @@ internal object FileUtils {
         /**
          * Android SDK < 29 如果没有koi文件夹自动创建 修复 20221004
          */
-        if (!imageFilePath.exists()) {
-            imageFilePath.mkdir()
+        if (!albumDir.exists()) {
+            albumDir.mkdir()
         }
 
         println(imageFilePath)
